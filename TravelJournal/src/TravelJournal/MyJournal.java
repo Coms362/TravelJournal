@@ -1,5 +1,6 @@
 package TravelJournal;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -9,6 +10,12 @@ public class MyJournal implements Journal {
 	HashMap<Integer, TravelLog> travelLogs = new HashMap<Integer, TravelLog>();
 	String journalName = "";
 	int journalID = 0;
+	
+	MyJournal()
+	{
+		//create();
+	}
+	
 	@Override
 	public int createLog(String destination, Date date) {
 		TravelLog tl = new MyTravelLog();
@@ -47,9 +54,10 @@ public class MyJournal implements Journal {
 	}
 
 	@Override
-	public Journal create() {
-		// TODO Auto-generated method stub
-		return null;
+	public int create() {
+		
+		journalID = (int)(Math.random()*100);
+		return journalID;
 	}
 
 	@Override
@@ -66,8 +74,10 @@ public class MyJournal implements Journal {
 
 	@Override
 	public List<TravelLog> getAllLogs() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Collection<TravelLog> tl = travelLogs.values();
+		List<TravelLog> logs  = (List<TravelLog>) tl;
+		return logs;
 	}
 
 	@Override

@@ -55,9 +55,9 @@ public interface Journal {
 	
 	/**
 	 * Creates a new journal object
-	 * @return - the newly created journal
+	 * @return - the newly created journal id
 	 */
-	Journal create();
+	int create();
 	
 	/**
 	 * retrieves all logs associated with the journal

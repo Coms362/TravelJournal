@@ -79,13 +79,13 @@ public class MyTravelController implements TravelController {
 
 	@Override
 	public boolean modifyLog(TravelLog t) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
 	@Override
 	public boolean deleteLog(int id) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
@@ -97,14 +97,17 @@ public class MyTravelController implements TravelController {
 
 	@Override
 	public Journal createJournal() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Journal j = keeper.createJournal();
+		
+		return j;
 	}
 
 	@Override
 	public List<TravelLog> viewAllLogs() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		List<TravelLog> tl = keeper.viewAllLogs();
+		return tl;
 	}
 
 	@Override
@@ -127,8 +130,9 @@ public class MyTravelController implements TravelController {
 
 	@Override
 	public int viewTripDistance(int tid, int jid) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		int distance = keeper.viewTripDistance(tid, jid);
+		return distance;
 	}
 
 	@Override
@@ -151,14 +155,16 @@ public class MyTravelController implements TravelController {
 
 	@Override
 	public boolean rateTrip(int jid, int tid, int rating) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		boolean rate = keeper.rateTrip(jid, tid, rating);
+		return rate;
 	}
 
 	@Override
 	public boolean deleteJournal(int id) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		boolean delete = keeper.deleteJournal(id);
+		return delete;
 	}
 
 }

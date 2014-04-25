@@ -8,7 +8,7 @@ import java.util.List;
 
 public class MyDataBase implements DataBase {
 
-	HashMap<String, Journal> journals = new HashMap<String, Journal>();
+	HashMap<Integer, Journal> journals = new HashMap<Integer, Journal>();
 	ArrayList<MyUsers> users = new ArrayList<MyUsers>(); 
 	MyDataBase()
 	{
@@ -43,31 +43,34 @@ public class MyDataBase implements DataBase {
 
 	@Override
 	public Journal getJournal(String name) {
-		return journals.get(name);
-	}
-
-	@Override
-	public Journal getJournal(int id) {
-		
+		//return journals.get(name);
 		Collection<Journal> theJournal = journals.values();
 		for(Journal j : theJournal)
 		{
-			if(j.getID() == id)
+			if(j.getName().equals(name))
 				return j;
 		}
 		return null;
 	}
 
 	@Override
+	public Journal getJournal(int id) {
+		
+		return journals.get(id);
+	}
+
+	@Override
 	public boolean putJournal(Journal j) {
-		String key = j.getName();
+		int key = j.getID();
 		journals.put(key, j);
 		return false;
 	}
 	@Override
 	public List<Journal> getAllJournals() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Collection<Journal> theJournal = journals.values();
+		List<Journal> j = (List<Journal>) theJournal;
+		return j;
 	}
 	@Override
 	public boolean storeWishList() {
@@ -81,7 +84,11 @@ public class MyDataBase implements DataBase {
 	}
 	@Override
 	public boolean removeJournal(int id) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		Journal j = journals.remove(id);
+		if(j == null)
+			return false;
+		else
+			return true;
 	}
 }

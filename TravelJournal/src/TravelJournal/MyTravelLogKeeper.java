@@ -104,13 +104,13 @@ public class MyTravelLogKeeper implements TravelLogKeeper {
 
 	@Override
 	public boolean modifyLog(TravelLog t) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
 	@Override
 	public boolean deleteLog(int id) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
@@ -122,8 +122,9 @@ public class MyTravelLogKeeper implements TravelLogKeeper {
 
 	@Override
 	public List<TravelLog> viewAllLogs() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		List<TravelLog> tl = currentLoggedIn.viewAllLogs();
+		return tl;
 	}
 
 	@Override
@@ -146,8 +147,9 @@ public class MyTravelLogKeeper implements TravelLogKeeper {
 
 	@Override
 	public int viewTripDistance(int tid, int jid) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		int distance = currentLoggedIn.viewTripDistance(tid, jid);
+		return distance;
 	}
 
 	@Override
@@ -170,19 +172,22 @@ public class MyTravelLogKeeper implements TravelLogKeeper {
 
 	@Override
 	public Journal createJournal() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Journal j = currentLoggedIn.createJournalAlt();
+		return j;
 	}
 
 	@Override
 	public boolean rateTrip(int jid, int tid, int rating) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		boolean rate = currentLoggedIn.rateTrip(jid, tid, rating);
+		return rate;
 	}
 
 	@Override
 	public boolean deleteJournal(int id) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		boolean delete = currentLoggedIn.deleteJournal(id);
+		return delete;
 	}
 }

@@ -1,5 +1,6 @@
 package TravelJournal;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -60,13 +61,13 @@ public class MyUsers implements Users {
 
 	@Override
 	public boolean modifyLog(TravelLog t) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
 	@Override
 	public boolean deleteLog(int id) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
@@ -93,8 +94,15 @@ public class MyUsers implements Users {
 
 	@Override
 	public List<TravelLog> viewAllLogs() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		List<Journal> journals = db.getAllJournals();
+		List<TravelLog> tl = new ArrayList<TravelLog>();
+		for(Journal j : journals )
+		{
+			tl.addAll(j.getAllLogs());
+		}
+		
+		return tl;
 	}
 
 	@Override
@@ -118,7 +126,10 @@ public class MyUsers implements Users {
 	@Override
 	public int viewTripDistance(int tid, int jid) {
 		// TODO Auto-generated method stub
-		return 0;
+		Journal j = db.getJournal(jid);
+		TravelLog tl = j.getLog(tid);
+		int distance = tl.getDistance();
+		return distance;
 	}
 
 	@Override
@@ -142,19 +153,26 @@ public class MyUsers implements Users {
 	@Override
 	public Journal createJournalAlt() {
 		// TODO Auto-generated method stub
-		return null;
+		Journal j = new MyJournal();
+		int id = j.create();
+		db.putJournal(j);
+		return j;
 	}
 
 	@Override
 	public boolean rateTrip(int jid, int tid, int rating) {
-		// TODO Auto-generated method stub
-		return false;
+	
+		Journal j = db.getJournal(jid);
+		TravelLog tl = j.getLog(tid);
+		boolean rate = tl.rateTrip(rating);
+		return rate;
 	}
 
 	@Override
 	public boolean deleteJournal(int id) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		boolean delete = db.removeJournal(id);
+		return delete;
 	}	
 	
 }

@@ -11,6 +11,7 @@ public class MyTravelLog implements TravelLog {
 	String travelMethod = "";
 	String locationWeather = "";
 	int distance = 0;
+	int myRating = 0;
 	
 	@Override
 	public boolean modifyTravelLog(String field, String toChange) {
@@ -49,14 +50,15 @@ public class MyTravelLog implements TravelLog {
 
 	@Override
 	public int getDistance() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return distance;
 	}
 
 	@Override
 	public boolean rateTrip(int rating) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		myRating = rating;
+		return true;
 	}
 
 }
