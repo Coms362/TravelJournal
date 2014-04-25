@@ -53,9 +53,29 @@ public interface Journal {
 	 */
 	public int getID();
 	
+	/**
+	 * Creates a new journal object
+	 * @return - the newly created journal
+	 */
 	Journal create();
+	
+	/**
+	 * retrieves all logs associated with the journal
+	 * @return - a list of all associated logs
+	 */
 	List<TravelLog> getAllLogs();
+	
+	/**
+	 * retrieves all data from all travel logs
+	 * @return - string of data from all travel logs
+	 */
 	String getAllData();
+	
+	/**
+	 * allows the user to sort travel logs
+	 * @param by - field to sort by
+	 * @return - list of sorted travel logs
+	 */
 	List<TravelLog> sort(String by);
 	
 	

@@ -52,9 +52,30 @@ public interface DataBase {
 	 */
 	public boolean putJournal(Journal j);
 	
+	/**
+	 * retrieves all journals
+	 * @return - list of each journal object
+	 */
 	List<Journal> getAllJournals();
+	
+	/**
+	 * Stores the user wish list
+	 * @return - true if the list is stored, false otherwise
+	 */
 	boolean storeWishList();
+	
+	/**
+	 * Allows user to store a future trip
+	 * @param tl - trip to be stored
+	 * @return - true if trip is stored
+	 */
 	boolean storeFutureTrip(TravelLog tl);
+	
+	/**
+	 * Removes a journal from the database for good
+	 * @param id - id of journal to remove
+	 * @return - true f remove is successful
+	 */
 	boolean removeJournal(int id);
 	
 }
