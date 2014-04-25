@@ -1,6 +1,7 @@
 package TravelJournal;
 
 import java.util.Date;
+import java.util.List;
 
 public interface TravelController {
 
@@ -99,8 +100,18 @@ public interface TravelController {
 	 */
 	public boolean create();
 	
-	
-	
+	List<TravelLog> viewAllLogs();
+	String viewData();
+	boolean addWish(String destination);
+	boolean planTrip(String destination);
+	int viewTripDistance(int tid, int jid);
+	List<TravelLog> sortDate();
+	List<TravelLog> sortRating();
+	boolean addAttributes(String attribute);
+	Journal createJournal();
+	boolean rateTrip(int jid, int tid, int rating);
+	boolean deleteJournal(int id);
+
 	
 	
 	

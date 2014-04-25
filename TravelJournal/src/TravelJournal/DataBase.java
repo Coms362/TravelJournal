@@ -1,5 +1,7 @@
 package TravelJournal;
 
+import java.util.List;
+
 public interface DataBase {
 
 	/**
@@ -49,5 +51,10 @@ public interface DataBase {
 	 * @return - true if journal is stored. false otherwise
 	 */
 	public boolean putJournal(Journal j);
+	
+	List<Journal> getAllJournals();
+	boolean storeWishList();
+	boolean storeFutureTrip(TravelLog tl);
+	boolean removeJournal(int id);
 	
 }

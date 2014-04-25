@@ -22,5 +22,9 @@ public interface TravelLog {
 	 */
 	public int create(String destination, Date date);
 	
-	
+	String getData();
+	TravelLog createNew(String destination);
+	int getDistance();
+	boolean rateTrip(int rating);
+
 }

@@ -2,6 +2,7 @@ package TravelJournal;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 public class MyJournal implements Journal {
 
@@ -46,9 +47,9 @@ public class MyJournal implements Journal {
 	}
 
 	@Override
-	public boolean create() {
+	public Journal create() {
 		// TODO Auto-generated method stub
-		return false;
+		return null;
 	}
 
 	@Override
@@ -61,6 +62,24 @@ public class MyJournal implements Journal {
 	public int getID() {
 		
 		return journalID;
+	}
+
+	@Override
+	public List<TravelLog> getAllLogs() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getAllData() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<TravelLog> sort(String by) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

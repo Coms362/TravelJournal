@@ -2,6 +2,7 @@ package TravelJournal;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 public class MyUsers implements Users {
 	String username;
@@ -86,6 +87,72 @@ public class MyUsers implements Users {
 
 	@Override
 	public boolean modify(String field, String change) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<TravelLog> viewAllLogs() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String viewData() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean addWish(String destination) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean planTrip(String destination) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int viewTripDistance(int tid, int jid) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<TravelLog> sortDate() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<TravelLog> sortRating() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean addAttributes(String attribute) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Journal createJournalAlt() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean rateTrip(int jid, int tid, int rating) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteJournal(int id) {
 		// TODO Auto-generated method stub
 		return false;
 	}	

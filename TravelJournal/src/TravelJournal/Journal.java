@@ -1,6 +1,7 @@
 package TravelJournal;
 
 import java.util.Date;
+import java.util.List;
 
 public interface Journal {
 	
@@ -52,11 +53,10 @@ public interface Journal {
 	 */
 	public int getID();
 	
-	/**
-	 * creates a new journal?
-	 * @return
-	 */
-	public boolean create();
+	Journal create();
+	List<TravelLog> getAllLogs();
+	String getAllData();
+	List<TravelLog> sort(String by);
 	
 	
 	

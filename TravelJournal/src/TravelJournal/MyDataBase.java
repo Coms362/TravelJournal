@@ -3,6 +3,7 @@ package TravelJournal;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 
 
 public class MyDataBase implements DataBase {
@@ -61,6 +62,26 @@ public class MyDataBase implements DataBase {
 	public boolean putJournal(Journal j) {
 		String key = j.getName();
 		journals.put(key, j);
+		return false;
+	}
+	@Override
+	public List<Journal> getAllJournals() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public boolean storeWishList() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public boolean storeFutureTrip(TravelLog tl) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public boolean removeJournal(int id) {
+		// TODO Auto-generated method stub
 		return false;
 	}
 }
