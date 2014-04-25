@@ -76,7 +76,7 @@ public class MyTravelLogKeeper implements TravelLogKeeper {
 	@Override
 	public boolean editUser(String name, String field, String toChange) {
 		
-		data.getUser(name).editUser(field, toChange);
+		data.getUser(name).modify(field, toChange);
 		
 		return true;
 	}
